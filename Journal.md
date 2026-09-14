@@ -13,3 +13,31 @@ For example, I can use `storeInfo.name` to get the restaurant name and `storeInf
 Challenges
 
 One thing I had to remember was that `prompt()` gives the user input as text, so I used `Number()` for the values that need to be numbers.
+
+-------------------------
+
+Phase 2 Journal
+
+Approach
+
+I created an empty `receiptItems` array to store the food items ordered by the customer. I used a `while` loop to repeatedly ask the user if they wanted to add another item.
+
+For each item, I created an object containing the item's name and price. I then used `.push()` to add the object to the `receiptItems` array.
+
+Journal Question
+
+If I set a value to a property that did not exist before, JavaScript creates that property on the object. This means I can create an object with some properties and add new properties later if needed.
+
+For example:
+
+```javascript
+const item = {};
+item.name = "Burger";
+item.price = 10.50;
+```
+
+This makes objects flexible because I do not have to define every property when the object is first created.
+
+Challenges
+
+The main thing I had to remember was that `prompt()` returns text, so I used `Number()` to convert the item price into a number before storing it.
