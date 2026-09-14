@@ -69,3 +69,23 @@ This makes it easy to calculate the total without having to manually access each
 Challenges
 
 The main thing I had to understand was that `item` represents the current object in the array. I can then use dot notation, such as `item.price`, to access its properties.
+
+---------------------------
+
+Phase 4 Journal
+
+Approach
+
+I used `.pop()` to remove the last item from the `receiptItems` array. I stored the removed item in a variable so I could display its name to the user.
+
+After removing the item, I recalculated the subtotal by looping through the remaining items. I then added the table fee, calculated the tax using the tax rate, and calculated the final grand total.
+
+Journal Question
+
+Using `.pop()` changes the actual `receiptItems` array by removing its last element. When I ran the total calculation again, the removed item's price was no longer included.
+
+This means I did not have to manually subtract the removed item's price. The array was updated first, and the calculation automatically used the updated list of items.
+
+Challenges
+
+One thing I had to pay attention to was recalculating the subtotal after using `.pop()`. The original subtotal included the removed item, so I reset the subtotal to zero and calculated it again using the updated array.
