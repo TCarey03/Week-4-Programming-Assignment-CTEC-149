@@ -44,3 +44,43 @@ for (const item of receiptItems) {
 }
 
 console.log(`Food subtotal: $${subtotal.toFixed(2)}`);
+
+
+// Phase 4: Order Modification & Final Bill
+
+const removedItem = receiptItems.pop();
+
+if (removedItem) {
+    console.log(`Removed item: ${removedItem.name}`);
+} else {
+    console.log("No item was available to remove.");
+}
+
+// Recalculate the food subtotal
+subtotal = 0;
+
+for (const item of receiptItems) {
+    subtotal += item.price;
+}
+
+// Add the table fee
+const grossSubtotal = subtotal + storeInfo.tableFee;
+
+// Calculate tax
+const taxAmount = grossSubtotal * (storeInfo.taxRate / 100);
+
+// Calculate grand total
+const grandTotal = grossSubtotal + taxAmount;
+
+// Print final receipt
+console.log("===== FINAL RECEIPT =====");
+console.log(`Store: ${storeInfo.name}`);
+
+for (const item of receiptItems) {
+    console.log(`${item.name} -- $${item.price.toFixed(2)}`);
+}
+
+console.log(`Table Fee: $${storeInfo.tableFee.toFixed(2)}`);
+console.log(`Subtotal: $${grossSubtotal.toFixed(2)}`);
+console.log(`Tax: $${taxAmount.toFixed(2)}`);
+console.log(`Grand Total: $${grandTotal.toFixed(2)}`);
