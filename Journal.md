@@ -41,3 +41,31 @@ This makes objects flexible because I do not have to define every property when 
 Challenges
 
 The main thing I had to remember was that `prompt()` returns text, so I used `Number()` to convert the item price into a number before storing it.
+
+-------------------------
+
+Phase 3 Journal
+
+Approach
+
+I used a `for...of` loop to go through each item in the `receiptItems` array. I created a `subtotal` variable starting at zero and added each item's price to it.
+
+Inside the loop, I used `item.name` to get the item's name and `item.price` to get its price.
+
+Journal Question
+
+The `for...of` loop gives me each item object from the array one at a time. I can use `item.price` to access just the price property of that object.
+
+For example:
+
+```javascript
+for (const item of receiptItems) {
+    subtotal += item.price;
+}
+```
+
+This makes it easy to calculate the total without having to manually access each item in the array.
+
+Challenges
+
+The main thing I had to understand was that `item` represents the current object in the array. I can then use dot notation, such as `item.price`, to access its properties.
